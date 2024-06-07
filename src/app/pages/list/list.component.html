@@ -1,0 +1,25 @@
+<!-- nzShowSizeChanger -->
+<div class="inner-content">
+    <nz-table #rowSelectionTable [nzData]="listOfData" [nzLoading]="loading" [nzFrontPagination]="false">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Alert</th>
+                <th>Last time of Record</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of rowSelectionTable.data">
+                <td>{{ data.username }}</td>
+                <!-- <td>{{ data.attackDate|date:'yyyy-MM-dd' }}</td> -->
+                <td><span *ngIf="data.alert" style="color: #f00;" nz-icon nzType="alert" nzTheme="outline"></span></td>
+                <td>{{ data.attackDate|date:'MM-dd-yyyy: HH:mm'}}</td>
+                <td>
+                    <button (click)="goDetail(data.participantId)" nz-button nzType="primary"
+                        nzSize="small" nzShape="round">Detail</button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

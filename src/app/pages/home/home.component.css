@@ -1,0 +1,58 @@
+.layout {
+    min-height: 100vh;
+}
+
+.logo {
+    width: 150px;
+    color: #fff;
+    text-align: center;
+    line-height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+}
+
+nz-header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+[nz-menu] {
+    line-height: 64px;
+}
+
+nz-content {
+    padding: 0 50px;
+    margin-top: 64px;
+}
+.search{
+    display: flex;
+    width: 900px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.search input{
+    width: auto;
+}
+.inner-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 380px;
+}
+
+nz-footer {
+    text-align: center;
+}
+.left{
+    flex: 2;
+}
+.left p{
+    line-height: 30px;
+}
+.right{
+    flex: 1;
+}
+.ant-menu-item-selected {
+    background-color: transparent!important;
+}

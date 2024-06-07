@@ -1,0 +1,29 @@
+<div class="detail">
+    <nz-table 
+        style="width: 500px"
+        #rowSelectionTable 
+        nzShowPagination 
+        [nzData]="listOfData" 
+        [nzPageIndex]="pageIndex"
+        (nzQueryParams)="onQueryParamsChange($event)" 
+        [nzLoading]="loading" 
+        [nzTotal]="total" 
+        [nzFrontPagination]="false"
+    >
+        <thead>
+            <tr>
+                <th>AttackDate</th>
+                <th>AttackTime</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of rowSelectionTable.data">
+                <td>{{ data.attackDate|date:'MM-dd-yyyy' }}</td>
+                <td>{{ data.attackDate|date:'HH:mm' }}</td>
+                <td>{{ data.location }}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <div id="main" style="height: 300px;width: 500px; margin-top: 20px;"></div>
+</div>

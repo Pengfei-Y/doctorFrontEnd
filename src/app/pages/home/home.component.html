@@ -1,0 +1,18 @@
+<nz-layout class="layout">
+    <nz-header style="z-index: 999;">
+        <h3 class="logo">Clinician system</h3>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+            <button nz-button nz-dropdown [nzDropdownMenu]="menu" *ngIf="showUser().username">{{ showUser().username }}</button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item (click)="logout()">logout</li>
+                </ul>
+            </nz-dropdown-menu>
+        </ul>
+    </nz-header>
+    <nz-content style="flex: 1;overflow: auto;">
+        <div class="inner-content">
+            <router-outlet></router-outlet>
+        </div>
+    </nz-content>
+</nz-layout>
